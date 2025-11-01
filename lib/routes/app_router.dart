@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import '../views/screens/onboarding/splash_screen.dart';
 import '../views/screens/auth/login_screen.dart';
 import '../views/screens/auth/register_screen.dart';
-import '../views/screens/onboarding/welcome_screen.dart';
 import '../views/screens/onboarding/onboarding_screen.dart';
 import '../views/screens/homescreen/home_screen.dart';
 import '../views/screens/jobs/jobs_page.dart';
@@ -31,7 +30,6 @@ import '../views/widgets/navigation/bottom_nav_bar.dart';
 class AppRouter {
   // Route names as constants
   static const String splash = '/splash';
-  static const String welcome = '/welcome';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String register = '/register';
@@ -58,11 +56,7 @@ class AppRouter {
         builder: (context, state) => const SplashScreen(),
       ),
 
-      GoRoute(
-        path: welcome,
-        name: 'welcome',
-        builder: (context, state) => const WelcomeScreen(),
-      ),
+      
 
       GoRoute(
         path: onboarding,
