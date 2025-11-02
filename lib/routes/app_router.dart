@@ -14,11 +14,11 @@ import '../views/screens/notifications/notifications_screen.dart';
 import '../views/widgets/navigation/bottom_nav_bar.dart';
 
 // Job board screens
-import '../views/screens/tasks/employer/my_job_posts_screen.dart';
-import '../views/screens/tasks/employer/job_post_form_screen.dart';
-import '../views/screens/tasks/employer/job_post_detail_screen.dart';
-import '../views/screens/tasks/employer/student_requests_screen.dart';
-import '../views/screens/tasks/employer/student_request_detail_screen.dart';
+import '../views/screens/tasks/employer/employer_dashboard_screen.dart';
+import '../views/screens/tasks/employer/create_job_screen.dart';
+import '../views/screens/tasks/employer/job_detail_employer_screen.dart';
+import '../views/screens/tasks/employer/job_requests_screen.dart';
+import '../views/screens/tasks/employer/request_detail_screen.dart';
 
 import '../models/job_post.dart';
 import '../models/application.dart';
@@ -157,7 +157,7 @@ class AppRouter {
             path: myJobPosts,
             name: 'my-job-posts',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: MyJobPostsScreen(),
+              child: EmployerDashboardScreen(),
             ),
           ),
 
@@ -167,7 +167,7 @@ class AppRouter {
             name: 'job-post-form',
             builder: (context, state) {
               final job = state.extra as JobPost?;
-              return JobPostFormScreen(job: job);
+              return CreateJobScreen(job: job);
             },
           ),
 
@@ -177,7 +177,7 @@ class AppRouter {
             name: 'job-post-detail',
             builder: (context, state) {
               final job = state.extra as JobPost;
-              return JobPostDetailScreen(job: job);
+              return JobDetailEmployerScreen(job: job);
             },
           ),
 
@@ -186,7 +186,7 @@ class AppRouter {
             path: studentRequests,
             name: 'student-requests',
             pageBuilder: (context, state) => const NoTransitionPage(
-              child: StudentRequestsScreen(),
+              child: JobRequestsScreen(),
             ),
           ),
 
@@ -196,7 +196,7 @@ class AppRouter {
             name: 'student-request-detail',
             builder: (context, state) {
               final application = state.extra as Application;
-              return StudentRequestDetailScreen(application: application);
+              return RequestDetailScreen(application: application);
             },
           ),
         ],

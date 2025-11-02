@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import '../../../../models/job_post.dart';
 import '../../../../mock/mock_data.dart';
 
-class JobPostFormScreen extends StatefulWidget {
+class CreateJobScreen extends StatefulWidget {
   final JobPost? job; // If provided, we're editing
 
-  const JobPostFormScreen({super.key, this.job});
+  const CreateJobScreen({super.key, this.job});
 
   @override
-  State<JobPostFormScreen> createState() => _JobPostFormScreenState();
+  State<CreateJobScreen> createState() => _CreateJobScreenState();
 }
 
-class _JobPostFormScreenState extends State<JobPostFormScreen> {
+class _CreateJobScreenState extends State<CreateJobScreen> {
   final _formKey = GlobalKey<FormState>();
   final MockData _mockData = MockData();
   

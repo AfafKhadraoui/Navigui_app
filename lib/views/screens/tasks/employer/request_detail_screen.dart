@@ -2,18 +2,18 @@ import 'package:flutter/material.dart';
 import '../../../../models/application.dart';
 import '../../../../mock/mock_data.dart';
 
-class StudentRequestDetailScreen extends StatefulWidget {
+class RequestDetailScreen extends StatefulWidget {
   final Application application;
 
-  const StudentRequestDetailScreen({super.key, required this.application});
+  const RequestDetailScreen({super.key, required this.application});
 
   @override
-  State<StudentRequestDetailScreen> createState() =>
-      _StudentRequestDetailScreenState();
+  State<RequestDetailScreen> createState() =>
+      _RequestDetailScreenState();
 }
 
-class _StudentRequestDetailScreenState
-    extends State<StudentRequestDetailScreen> {
+class _RequestDetailScreenState
+    extends State<RequestDetailScreen> {
   final MockData _mockData = MockData();
   late Application _application;
 

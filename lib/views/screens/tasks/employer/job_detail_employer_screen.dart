@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import '../../../../models/job_post.dart';
 import '../../../../mock/mock_data.dart';
-import 'job_post_form_screen.dart';
+import 'create_job_screen.dart';
 
-class JobPostDetailScreen extends StatefulWidget {
+class JobDetailEmployerScreen extends StatefulWidget {
   final JobPost job;
 
-  const JobPostDetailScreen({super.key, required this.job});
+  const JobDetailEmployerScreen({super.key, required this.job});
 
   @override
-  State<JobPostDetailScreen> createState() => _JobPostDetailScreenState();
+  State<JobDetailEmployerScreen> createState() => _JobDetailEmployerScreenState();
 }
 
-class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
+class _JobDetailEmployerScreenState extends State<JobDetailEmployerScreen> {
   final MockData _mockData = MockData();
   late JobPost _job;
 
@@ -26,7 +26,7 @@ class _JobPostDetailScreenState extends State<JobPostDetailScreen> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => JobPostFormScreen(job: _job),
+        builder: (context) => CreateJobScreen(job: _job),
       ),
     );
 

@@ -6,14 +6,14 @@ import '../../../../../models/job_post.dart';
 import '../../../../mock/mock_data.dart';
 import '../../../../../routes/app_router.dart';
 
-class MyJobPostsScreen extends StatefulWidget {
-  const MyJobPostsScreen({super.key});
+class EmployerDashboardScreen extends StatefulWidget {
+  const EmployerDashboardScreen({super.key});
 
   @override
-  State<MyJobPostsScreen> createState() => _MyJobPostsScreenState();
+  State<EmployerDashboardScreen> createState() => _EmployerDashboardScreenState();
 }
 
-class _MyJobPostsScreenState extends State<MyJobPostsScreen> {
+class _EmployerDashboardScreenState extends State<EmployerDashboardScreen> {
   final MockData _mockData = MockData();
   List<JobPost> _jobs = [];
 

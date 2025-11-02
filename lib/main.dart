@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'mock/mock_data.dart';
-import 'views/screens/tasks/employer/my_job_posts_screen.dart';
-import 'views/screens/tasks/employer/student_requests_screen.dart';
+import 'views/screens/tasks/employer/employer_dashboard_screen.dart';
+import 'views/screens/tasks/employer/job_requests_screen.dart';
 
 void main() {
   // Initialize mock data
@@ -38,8 +38,8 @@ class _HomePageState extends State<HomePage> {
   int _selectedIndex = 0;
 
   final List<Widget> _screens = [
-    const MyJobPostsScreen(),
-    const StudentRequestsScreen(),
+    const EmployerDashboardScreen(),
+    const JobRequestsScreen(),
   ];
 
   @override

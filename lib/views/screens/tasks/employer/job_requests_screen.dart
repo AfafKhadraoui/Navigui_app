@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import '../../../../models/application.dart';
 import '../../../../mock/mock_data.dart';
-import 'student_request_detail_screen.dart';
+import 'request_detail_screen.dart';
 
-class StudentRequestsScreen extends StatefulWidget {
-  const StudentRequestsScreen({super.key});
+class JobRequestsScreen extends StatefulWidget {
+  const JobRequestsScreen({super.key});
 
   @override
-  State<StudentRequestsScreen> createState() => _StudentRequestsScreenState();
+  State<JobRequestsScreen> createState() => _JobRequestsScreenState();
 }
 
-class _StudentRequestsScreenState extends State<StudentRequestsScreen> {
+class _JobRequestsScreenState extends State<JobRequestsScreen> {
   final MockData _mockData = MockData();
   List<Application> _applications = [];
   ApplicationStatus? _filterStatus;
@@ -72,7 +72,7 @@ class _StudentRequestsScreenState extends State<StudentRequestsScreen> {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => StudentRequestDetailScreen(application: application),
+        builder: (context) => RequestDetailScreen(application: application),
       ),
     );
 
