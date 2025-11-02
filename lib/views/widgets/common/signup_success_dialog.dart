@@ -21,35 +21,29 @@ class SignupSuccessDialog extends StatelessWidget {
     final themeColor = isStudent ? AppColors.purple6 : AppColors.electricLime;
     final buttonTextColor = isStudent ? AppColors.white : AppColors.black;
     
-    return Dialog(
-      backgroundColor: Colors.transparent,
-      child: Container(
-        padding: const EdgeInsets.all(32),
-        decoration: BoxDecoration(
-          color: AppColors.black,
-          borderRadius: BorderRadius.circular(24),
-          border: Border.all(
-            color: Colors.grey[800]!,
-            width: 1,
-          ),
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // Success icon
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: themeColor,
+    return Scaffold(
+      backgroundColor: AppColors.black,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.symmetric(horizontal: 32.0, vertical: 40.0),
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              
+              // Success icon
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: themeColor,
+                ),
+                child: Icon(
+                  Icons.check,
+                  color: isStudent ? Colors.white : Colors.black,
+                  size: 60,
+                ),
               ),
-              child: Icon(
-                Icons.check,
-                color: isStudent ? Colors.white : Colors.black,
-                size: 60,
-              ),
-            ),
             
             const SizedBox(height: 24),
             
@@ -247,8 +241,11 @@ class SignupSuccessDialog extends StatelessWidget {
                 ],
               ),
             ),
+            
+            const SizedBox(height: 20),
           ],
         ),
+      ),
       ),
     );
   }

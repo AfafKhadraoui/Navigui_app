@@ -150,7 +150,7 @@ class _Step2StudentScreenState extends State<Step2StudentScreen> {
                 // Phone Number
                 _buildTextField(
                   label: 'Phone number',
-                  hint: 'careerplace@gmail.com',
+                  hint: '+213 456 7890 xxx',
                   controller: _phoneController,
                   keyboardType: TextInputType.phone,
                 ),
@@ -178,7 +178,7 @@ class _Step2StudentScreenState extends State<Step2StudentScreen> {
                 // University
                 _buildTextField(
                   label: 'University',
-                  hint: '••••••••••',
+                  hint: 'e.g., ENSIA, ESI, USTHB, ENS...etc',
                   controller: _universityController,
                 ),
                 
@@ -216,7 +216,7 @@ class _Step2StudentScreenState extends State<Step2StudentScreen> {
                           value: _selectedYear,
                           isExpanded: true,
                           hint: Text(
-                            '••••••••••',
+                            'Select your year',
                             style: GoogleFonts.aclonica(
                               color: Colors.grey,
                               fontSize: 14,

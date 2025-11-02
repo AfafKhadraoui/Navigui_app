@@ -73,21 +73,19 @@ class _Step4StudentSkillsScreenState extends State<Step4StudentSkillsScreen> {
   }
 
   void _handleContinue() {
-    // Show success dialog
-    showDialog(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => SignupSuccessDialog(
-        userName: 'Student', // TODO: Get actual name from signup data
-        isStudent: true,
-        onGoToDashboard: () {
-          Navigator.of(context).pop(); // Close dialog
-          context.go(AppRouter.home); // Navigate to home
-        },
-        onStartOver: () {
-          Navigator.of(context).pop(); // Close dialog
-          context.go(AppRouter.accountType); // Go back to account type
-        },
+    // Navigate to success screen
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => SignupSuccessDialog(
+          userName: 'Student', // TODO: Get actual name from signup data
+          isStudent: true,
+          onGoToDashboard: () {
+            context.go(AppRouter.home); // Navigate to home
+          },
+          onStartOver: () {
+            context.go(AppRouter.accountType); // Go back to account type
+          },
+        ),
       ),
     );
   }

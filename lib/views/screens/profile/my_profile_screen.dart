@@ -123,11 +123,12 @@ class MyProfileScreen extends StatelessWidget {
               // Profile Stats (for students)
               if (isStudent) ...[
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    _buildStatCard('12', 'Applications'),
-                    _buildStatCard('3', 'Interviews'),
-                    _buildStatCard('1', 'Hired'),
+                    Expanded(child: _buildStatCard('12', 'Applications')),
+                    const SizedBox(width: 8),
+                    Expanded(child: _buildStatCard('3', 'Interviews')),
+                    const SizedBox(width: 8),
+                    Expanded(child: _buildStatCard('1', 'Hired')),
                   ],
                 ),
                 const SizedBox(height: 32),
@@ -261,7 +262,7 @@ class MyProfileScreen extends StatelessWidget {
   
   Widget _buildStatCard(String value, String label) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
       decoration: BoxDecoration(
         color: AppColors.grey4,
         borderRadius: BorderRadius.circular(12),
@@ -281,9 +282,12 @@ class MyProfileScreen extends StatelessWidget {
           Text(
             label,
             style: GoogleFonts.aclonica(
-              fontSize: 12,
+              fontSize: 11,
               color: AppColors.grey6,
             ),
+            textAlign: TextAlign.center,
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
           ),
         ],
       ),
