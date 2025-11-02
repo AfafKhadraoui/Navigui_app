@@ -3,13 +3,13 @@ import 'package:go_router/go_router.dart';
 import '../views/screens/onboarding/splash_screen.dart';
 import '../views/screens/auth/login_screen.dart';
 import '../views/screens/auth/register_screen.dart';
-import '../views/screens/onboarding/welcome_screen.dart';
 import '../views/screens/onboarding/onboarding_screen.dart';
 import '../views/screens/homescreen/home_screen.dart';
 import '../views/screens/jobs/jobs_page.dart';
 import '../views/screens/tasks/my_tasks_screen.dart';
 import '../views/screens/education/education_list_screen.dart';
 import '../views/screens/profile/my_profile_screen.dart';
+import '../views/screens/notifications/notifications_screen.dart';
 import '../views/widgets/navigation/bottom_nav_bar.dart';
 import '../views/screens/jobs/job_detail_screen.dart';
 
@@ -32,7 +32,6 @@ import '../views/screens/jobs/job_detail_screen.dart';
 class AppRouter {
   // Route names as constants
   static const String splash = '/splash';
-  static const String welcome = '/welcome';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String register = '/register';
@@ -44,6 +43,9 @@ class AppRouter {
   static const String tasks = '/tasks';
   static const String learn = '/learn';
   static const String profile = '/profile';
+
+  // Additional routes
+  static const String notifications = '/notifications';
 
   static final GoRouter router = GoRouter(
     initialLocation: splash, // Start at splash screen
@@ -58,12 +60,6 @@ class AppRouter {
         path: splash,
         name: 'splash',
         builder: (context, state) => const SplashScreen(),
-      ),
-
-      GoRoute(
-        path: welcome,
-        name: 'welcome',
-        builder: (context, state) => const WelcomeScreen(),
       ),
 
       GoRoute(
@@ -82,6 +78,12 @@ class AppRouter {
         path: register,
         name: 'register',
         builder: (context, state) => const RegisterScreen(),
+      ),
+
+      GoRoute(
+        path: notifications,
+        name: 'notifications',
+        builder: (context, state) => const NotificationsScreen(),
       ),
 
       // ============================================
