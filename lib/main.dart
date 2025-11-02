@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
-import 'logIn.dart';
+import 'views/screens/auth/logIn.dart';
+import 'commons/themes/style_simple/theme.dart';
+import 'routes/app_router.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const NaviguiApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class NaviguiApp extends StatelessWidget {
+  const NaviguiApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Navigui - Part-Time Job Finder',
+    return MaterialApp.router(
+      title: 'Navigui',
+      theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        brightness: Brightness.dark,
-        primaryColor: const Color(0xFF9288EE),
-        scaffoldBackgroundColor: Colors.black,
-        colorScheme: ColorScheme.dark(
-          primary: const Color(0xFF9288EE),
-          secondary: const Color(0xFFD2FF1F),
-        ),
-      ),
-      home: const LoginScreen(),
+      routerConfig: AppRouter.router,
     );
   }
 }
