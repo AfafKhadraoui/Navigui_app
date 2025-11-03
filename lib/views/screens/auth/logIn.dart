@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../commons/themes/style_simple/colors.dart';
 import 'package:go_router/go_router.dart';
-import '../../../routes/app_router.dart';  
+import '../../../routes/app_router.dart';
 
 class LoginScreen2 extends StatefulWidget {
   const LoginScreen2({super.key});
@@ -35,7 +35,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Spacer(flex: 2),
-              
+
               // Title
               Text(
                 'Log in to your account',
@@ -45,9 +45,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 50),
-              
+
               // Email Label
               Text(
                 'Email',
@@ -56,9 +56,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 8),
-              
+
               // Email TextField (dark surface + white text)
               Container(
                 decoration: BoxDecoration(
@@ -85,9 +85,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               // Password Label
               Text(
                 'Password',
@@ -96,9 +96,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 8),
-              
+
               // Password TextField (dark surface + white text)
               Container(
                 decoration: BoxDecoration(
@@ -138,17 +138,15 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Login Button
               ElevatedButton(
                 onPressed: () {
-                 print('Login with: ${_emailController.text}');
-                // After login success:
-                context.go(AppRouter.home); // Goes to home WITH bottom bar!
-              
-                 
+                  print('Login with: ${_emailController.text}');
+                  // After login success:
+                  context.go(AppRouter.home); // Goes to home WITH bottom bar!
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFFD2FF1F),
@@ -167,9 +165,9 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               // Sign Up Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -198,7 +196,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
                   ),
                 ],
               ),
-              
+
               const Spacer(flex: 3),
             ],
           ),

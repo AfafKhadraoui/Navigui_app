@@ -47,14 +47,14 @@ class AppRouter {
   static const String onboarding = '/onboarding';
   static const String login = '/login';
   static const String accountType = '/account-type';
-  
+
   // Student signup steps
   static const String studentStep1 = '/signup/student/step1';
   static const String studentStep2 = '/signup/student/step2';
   static const String studentStep3 = '/signup/student/step3';
   static const String studentStep4 = '/signup/student/step4';
   static const String studentStep5 = '/signup/student/step5';
-  
+
   // Employer signup steps
   static const String employerStep1 = '/signup/employer/step1';
   static const String employerStep2 = '/signup/employer/step2';
@@ -64,14 +64,14 @@ class AppRouter {
   // Main app routes (with bottom bar) - 5 tabs
   static const String home = '/home';
   static const String jobs = '/jobs';
-  static const String jobDetails = '/jobs/:id';  // New route for job details
+  static const String jobDetails = '/jobs/:id'; // New route for job details
   static const String tasks = '/tasks';
   static const String learn = '/learn';
   static const String profile = '/profile';
 
   // Additional routes
   static const String notifications = '/notifications';
-  
+
   // Profile routes
   static const String editStudentProfile = '/profile/edit-student';
   static const String createEmployerProfile = '/profile/create-employer';
@@ -110,25 +110,81 @@ class AppRouter {
         builder: (context, state) => const AccountTypeScreen(),
       ),
 
+      // Student signup steps
+      GoRoute(
+        path: studentStep1,
+        name: 'student-step1',
+        builder: (context, state) => const Step1StudentScreen(),
+      ),
+
+      GoRoute(
+        path: studentStep2,
+        name: 'student-step2',
+        builder: (context, state) => const Step2StudentScreen(),
+      ),
+
+      GoRoute(
+        path: studentStep3,
+        name: 'student-step3',
+        builder: (context, state) => const Step3StudentScreen(),
+      ),
+
+      GoRoute(
+        path: studentStep4,
+        name: 'student-step4',
+        builder: (context, state) => const Step4StudentSkillsScreen(),
+      ),
+
+      GoRoute(
+        path: studentStep5,
+        name: 'student-step5',
+        builder: (context, state) => const Step5StudentScreen(),
+      ),
+
+      // Employer signup steps
+      GoRoute(
+        path: employerStep1,
+        name: 'employer-step1',
+        builder: (context, state) => const Step1EmployerScreen(),
+      ),
+
+      GoRoute(
+        path: employerStep2,
+        name: 'employer-step2',
+        builder: (context, state) => const Step2EmployerScreen(),
+      ),
+
+      GoRoute(
+        path: employerStep3,
+        name: 'employer-step3',
+        builder: (context, state) => const Step3EmployerScreen(),
+      ),
+
+      GoRoute(
+        path: employerStep4,
+        name: 'employer-step4',
+        builder: (context, state) => const Step4EmployerScreen(),
+      ),
+
       GoRoute(
         path: notifications,
         name: 'notifications',
         builder: (context, state) => const NotificationsScreen(),
       ),
-      
+
       // Profile management routes (outside bottom nav)
       GoRoute(
         path: editStudentProfile,
         name: 'edit-student-profile',
         builder: (context, state) => const EditStudentProfileScreen(),
       ),
-      
+
       GoRoute(
         path: createEmployerProfile,
         name: 'create-employer-profile',
         builder: (context, state) => const CreateEmployerProfileScreen(),
       ),
-      
+
       GoRoute(
         path: editEmployerProfile,
         name: 'edit-employer-profile',
@@ -152,7 +208,7 @@ class AppRouter {
               child: HomeScreen(),
             ),
           ),
-          
+
           // Jobs routes
           GoRoute(
             path: jobs,
@@ -171,7 +227,7 @@ class AppRouter {
               ),
             ],
           ),
-          
+
           GoRoute(
             path: tasks,
             name: 'tasks',
