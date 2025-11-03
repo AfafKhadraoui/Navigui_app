@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../views/screens/onboarding/splash_screen.dart';
-import '../views/screens/auth/login_screen.dart';
-import '../views/screens/auth/register_screen.dart';
+import '../views/screens/auth/login.dart';
+import '../views/screens/auth/AccountType.dart';
+import '../views/screens/auth/step1Student.dart';
+import '../views/screens/auth/step2Student.dart';
+import '../views/screens/auth/step3Student.dart';
+import '../views/screens/auth/step4StudentSkills.dart';
+import '../views/screens/auth/step5Student.dart';
+import '../views/screens/auth/step1Employer.dart';
+import '../views/screens/auth/step2Employer.dart';
+import '../views/screens/auth/step3Employer.dart';
+import '../views/screens/auth/step4Employer.dart';
 import '../views/screens/onboarding/onboarding_screen.dart';
 import '../views/screens/homescreen/home_screen.dart';
 import '../views/screens/jobs/jobs_page.dart';
 import '../views/screens/tasks/my_tasks_screen.dart';
 import '../views/screens/education/education_list_screen.dart';
 import '../views/screens/profile/my_profile_screen.dart';
+import '../views/screens/profile/edit_student_profile_screen2.dart';
+import '../views/screens/employer/create_employer_profile_screen.dart';
+import '../views/screens/employer/edit_employer_profile_screen2.dart';
 import '../views/screens/notifications/notifications_screen.dart';
 import '../views/widgets/navigation/bottom_nav_bar.dart';
 import '../views/screens/jobs/job_detail_screen.dart';
@@ -34,7 +46,20 @@ class AppRouter {
   static const String splash = '/splash';
   static const String onboarding = '/onboarding';
   static const String login = '/login';
-  static const String register = '/register';
+  static const String accountType = '/account-type';
+  
+  // Student signup steps
+  static const String studentStep1 = '/signup/student/step1';
+  static const String studentStep2 = '/signup/student/step2';
+  static const String studentStep3 = '/signup/student/step3';
+  static const String studentStep4 = '/signup/student/step4';
+  static const String studentStep5 = '/signup/student/step5';
+  
+  // Employer signup steps
+  static const String employerStep1 = '/signup/employer/step1';
+  static const String employerStep2 = '/signup/employer/step2';
+  static const String employerStep3 = '/signup/employer/step3';
+  static const String employerStep4 = '/signup/employer/step4';
 
   // Main app routes (with bottom bar) - 5 tabs
   static const String home = '/home';
@@ -46,6 +71,11 @@ class AppRouter {
 
   // Additional routes
   static const String notifications = '/notifications';
+  
+  // Profile routes
+  static const String editStudentProfile = '/profile/edit-student';
+  static const String createEmployerProfile = '/profile/create-employer';
+  static const String editEmployerProfile = '/profile/edit-employer';
 
   static final GoRouter router = GoRouter(
     initialLocation: splash, // Start at splash screen
@@ -71,19 +101,38 @@ class AppRouter {
       GoRoute(
         path: login,
         name: 'login',
-        builder: (context, state) => const LoginScreen(),
+        builder: (context, state) => const LoginScreen2(),
       ),
 
       GoRoute(
-        path: register,
-        name: 'register',
-        builder: (context, state) => const RegisterScreen(),
+        path: accountType,
+        name: 'account-type',
+        builder: (context, state) => const AccountTypeScreen(),
       ),
 
       GoRoute(
         path: notifications,
         name: 'notifications',
         builder: (context, state) => const NotificationsScreen(),
+      ),
+      
+      // Profile management routes (outside bottom nav)
+      GoRoute(
+        path: editStudentProfile,
+        name: 'edit-student-profile',
+        builder: (context, state) => const EditStudentProfileScreen(),
+      ),
+      
+      GoRoute(
+        path: createEmployerProfile,
+        name: 'create-employer-profile',
+        builder: (context, state) => const CreateEmployerProfileScreen(),
+      ),
+      
+      GoRoute(
+        path: editEmployerProfile,
+        name: 'edit-employer-profile',
+        builder: (context, state) => const EditEmployerProfileScreen2(),
       ),
 
       // ============================================
