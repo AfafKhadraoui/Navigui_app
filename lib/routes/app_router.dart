@@ -23,6 +23,7 @@ import '../views/screens/employer/create_employer_profile_screen.dart';
 import '../views/screens/employer/edit_employer_profile_screen2.dart';
 import '../views/screens/notifications/notifications_screen.dart';
 import '../views/widgets/navigation/bottom_nav_bar.dart';
+import '../views/screens/jobs/job_detail_screen.dart';
 
 /// App Router Configuration
 ///
@@ -63,6 +64,7 @@ class AppRouter {
   // Main app routes (with bottom bar) - 5 tabs
   static const String home = '/home';
   static const String jobs = '/jobs';
+  static const String jobDetails = '/jobs/:id';  // New route for job details
   static const String tasks = '/tasks';
   static const String learn = '/learn';
   static const String profile = '/profile';
@@ -150,13 +152,26 @@ class AppRouter {
               child: HomeScreen(),
             ),
           ),
+          
+          // Jobs routes
           GoRoute(
             path: jobs,
             name: 'jobs',
             pageBuilder: (context, state) => const NoTransitionPage(
               child: JobsPage(),
             ),
+            routes: [
+              GoRoute(
+                path: 'details/:id',
+                name: 'jobDetails',
+                builder: (context, state) {
+                  final job = state.extra as Map<String, dynamic>;
+                  return JobDetailsScreen(job: job);
+                },
+              ),
+            ],
           ),
+          
           GoRoute(
             path: tasks,
             name: 'tasks',

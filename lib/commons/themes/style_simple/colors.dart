@@ -110,6 +110,10 @@ class AppColors {
   static const Color error = red1;
   static const Color info = blue2;
 
+  // Special UI Elements
+  static const Color lavenderPurple = purple5; // Used in job cards
+  static const Color urgentRed = Color(0xFFFF4B4B); // Used for urgent job markers
+
   // Borders
   static const Color stroke = darkBlue;
   static const Color border = grey4;
