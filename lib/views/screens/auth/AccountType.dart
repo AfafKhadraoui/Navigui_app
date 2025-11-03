@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'step1Student.dart';
-import 'step1Employer.dart';
+import 'package:go_router/go_router.dart';
+import '../../../routes/app_router.dart';
 
-class AccountTypeScreen extends StatelessWidget {
+class AccountTypeScreen extends StatefulWidget {
   const AccountTypeScreen({super.key});
+
+  @override
+  State<AccountTypeScreen> createState() => _AccountTypeScreenState();
+}
+
+class _AccountTypeScreenState extends State<AccountTypeScreen> {
+  String? _selectedType; // Track which option is being pressed
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +25,7 @@ class AccountTypeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Spacer(flex: 2),
-              
+
               // Title
               Text(
                 'Join us',
@@ -29,9 +36,9 @@ class AccountTypeScreen extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 12),
-              
+
               // Subtitle
               Text(
                 'select your account type to join us',
@@ -41,26 +48,37 @@ class AccountTypeScreen extends StatelessWidget {
                   color: Colors.grey,
                 ),
               ),
-              
+
               const SizedBox(height: 60),
-              
+
               // Student Option
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Step1StudentScreen(),
-                    ),
-                  );
+                onTapDown: (_) {
+                  setState(() {
+                    _selectedType = 'student';
+                  });
                 },
-                child: Container(
+                onTapUp: (_) {
+                  setState(() {
+                    _selectedType = null;
+                  });
+                },
+                onTapCancel: () {
+                  setState(() {
+                    _selectedType = null;
+                  });
+                },
+                onTap: () {
+                  context.go(AppRouter.studentStep1);
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 150),
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     color: Colors.transparent,
                     border: Border.all(
                       color: const Color(0xFF9288EE),
-                      width: 3,
+                      width: _selectedType == 'student' ? 5 : 3,
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -81,9 +99,9 @@ class AccountTypeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      
+
                       const SizedBox(width: 20),
-                      
+
                       // Text
                       Expanded(
                         child: Column(
@@ -112,26 +130,37 @@ class AccountTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               // Employer Option
               GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const Step1EmployerScreen(),
-                    ),
-                  );
+                onTapDown: (_) {
+                  setState(() {
+                    _selectedType = 'employer';
+                  });
                 },
-                child: Container(
+                onTapUp: (_) {
+                  setState(() {
+                    _selectedType = null;
+                  });
+                },
+                onTapCancel: () {
+                  setState(() {
+                    _selectedType = null;
+                  });
+                },
+                onTap: () {
+                  context.go(AppRouter.employerStep1);
+                },
+                child: AnimatedContainer(
+                  duration: const Duration(milliseconds: 150),
                   padding: const EdgeInsets.all(24),
                   decoration: BoxDecoration(
                     color: Colors.transparent,
                     border: Border.all(
                       color: const Color(0xFFD2FF1F),
-                      width: 3,
+                      width: _selectedType == 'employer' ? 5 : 3,
                     ),
                     borderRadius: BorderRadius.circular(20),
                   ),
@@ -152,9 +181,9 @@ class AccountTypeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      
+
                       const SizedBox(width: 20),
-                      
+
                       // Text
                       Expanded(
                         child: Column(
@@ -183,36 +212,38 @@ class AccountTypeScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               // Sign In Link
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
                     'already have an account? ',
-                    style: GoogleFonts.aclonica(
+                    style: GoogleFonts.acme(
                       fontSize: 14,
                       color: Colors.white,
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+                      context.go(AppRouter.login);
                     },
                     child: Text(
                       'Sign In',
-                      style: GoogleFonts.aclonica(
+                      style: GoogleFonts.acme(
                         fontSize: 14,
                         color: const Color(0xFF9288EE),
                         fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFF9288EE),
                       ),
                     ),
                   ),
                 ],
               ),
-              
+
               const Spacer(flex: 3),
             ],
           ),

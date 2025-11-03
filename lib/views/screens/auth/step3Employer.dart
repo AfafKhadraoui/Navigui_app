@@ -24,7 +24,7 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 40),
-              
+
               // Header with progress indicator
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,9 +64,9 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                   ),
                 ],
               ),
-              
+
               const Spacer(),
-              
+
               // Profile Photo Label
               Text(
                 'Profile Photo (optional)',
@@ -75,9 +75,9 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Upload Photo Area
               GestureDetector(
                 onTap: () {
@@ -123,9 +123,9 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Account Summary Box
               Container(
                 padding: const EdgeInsets.all(24),
@@ -147,15 +147,15 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                     const SizedBox(height: 16),
                     _buildSummaryRow('Email:', 'whatever@youdid.com'),
                     const SizedBox(height: 8),
-                    _buildSummaryRow('Name:', 'Amel Saadaoui'),
+                    _buildSummaryRow('Name:', 'Afaf Khadraoui'),
                     const SizedBox(height: 8),
                     _buildSummaryRow('Location:', 'Alger'),
                   ],
                 ),
               ),
-              
+
               const Spacer(),
-              
+
               // Buttons Row
               Row(
                 children: [
@@ -185,9 +185,9 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(width: 16),
-                  
+
                   // Continue Button
                   Expanded(
                     child: ElevatedButton(
@@ -219,9 +219,9 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               // Terms and Privacy
               Center(
                 child: RichText(
@@ -252,7 +252,7 @@ class _Step3EmployerScreenState extends State<Step3EmployerScreen> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
             ],
           ),

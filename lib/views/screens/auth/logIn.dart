@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../../../commons/themes/style_simple/colors.dart';
-import 'package:go_router/go_router.dart'       ;
-import '../../../routes/app_router.dart';
-import 'AccountType.dart';  
+import 'package:go_router/go_router.dart';
+import '../../../routes/app_router.dart';  
 
 class LoginScreen2 extends StatefulWidget {
   const LoginScreen2({super.key});
@@ -39,7 +38,7 @@ class _LoginScreen2State extends State<LoginScreen2> {
               
               // Title
               Text(
-                'Log in your',
+                'Log in to your account',
                 style: GoogleFonts.aclonica(
                   fontSize: 36,
                   fontWeight: FontWeight.bold,
@@ -177,26 +176,23 @@ class _LoginScreen2State extends State<LoginScreen2> {
                 children: [
                   Text(
                     "don't have an account? ",
-                    style: GoogleFonts.aclonica(
+                    style: GoogleFonts.acme(
                       fontSize: 14,
                       color: Colors.white,
                     ),
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AccountTypeScreen(),
-                        ),
-                      );
+                      context.go(AppRouter.accountType);
                     },
                     child: Text(
                       'Sign Up',
-                      style: GoogleFonts.aclonica(
+                      style: GoogleFonts.acme(
                         fontSize: 14,
                         color: const Color(0xFFD2FF1F),
                         fontWeight: FontWeight.bold,
+                        decoration: TextDecoration.underline,
+                        decorationColor: const Color(0xFFD2FF1F),
                       ),
                     ),
                   ),

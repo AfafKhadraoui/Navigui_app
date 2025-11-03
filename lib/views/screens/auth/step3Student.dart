@@ -24,7 +24,7 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const SizedBox(height: 40),
-              
+
               // Header with progress indicator
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,9 +64,9 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                   ),
                 ],
               ),
-              
+
               const Spacer(),
-              
+
               // Profile Photo Label
               Text(
                 'Profile Photo (optional)',
@@ -75,9 +75,9 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                   color: Colors.white,
                 ),
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // Upload Photo Area
               GestureDetector(
                 onTap: () {
@@ -123,9 +123,9 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // Account Summary Box
               Container(
                 padding: const EdgeInsets.all(24),
@@ -145,17 +145,17 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                       ),
                     ),
                     const SizedBox(height: 16),
-                    _buildSummaryRow('Email:', 'whatever@youdid.com'),
+                    _buildSummaryRow('Email:', 'afaf.khadraoui@ensia.com'),
                     const SizedBox(height: 8),
-                    _buildSummaryRow('Name:', 'Amel Saadaoui'),
+                    _buildSummaryRow('Name:', 'Afaf Khadraoui'),
                     const SizedBox(height: 8),
-                    _buildSummaryRow('Location:', 'Alger'),
+                    _buildSummaryRow('Location:', 'Boumerdes'),
                   ],
                 ),
               ),
-              
+
               const Spacer(),
-              
+
               // Buttons Row
               Row(
                 children: [
@@ -185,9 +185,9 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                       ),
                     ),
                   ),
-                  
+
                   const SizedBox(width: 16),
-                  
+
                   // Continue Button
                   Expanded(
                     child: ElevatedButton(
@@ -195,7 +195,8 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const Step4StudentSkillsScreen(),
+                            builder: (context) =>
+                                const Step4StudentSkillsScreen(),
                           ),
                         );
                       },
@@ -219,9 +220,9 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: 24),
-              
+
               // Terms and Privacy
               Center(
                 child: RichText(
@@ -252,7 +253,7 @@ class _Step3StudentScreenState extends State<Step3StudentScreen> {
                   ),
                 ),
               ),
-              
+
               const SizedBox(height: 40),
             ],
           ),
